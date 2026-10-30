@@ -11,10 +11,8 @@ const geist = Geist({
   subsets: ["latin"],
 });
 
-// Vercel sets this to the production domain (the custom domain once one is added).
-const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "http://localhost:3000";
+// Canonical domain. Vercel's VERCEL_PROJECT_PRODUCTION_URL reports www, which only redirects here.
+const siteUrl = "https://jordanglass.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
