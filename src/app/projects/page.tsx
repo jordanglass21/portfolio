@@ -23,7 +23,7 @@ export default function ProjectsPage() {
     <main className="mx-auto max-w-5xl px-6 py-20">
       <h1 className="text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">Projects</h1>
       <p className="mt-4 max-w-[65ch] text-lg text-text-muted">
-        Things I&apos;ve designed, built, and shipped. Both are live and open source.
+        Things I&apos;ve designed, built, and shipped, and the engineering decisions behind them.
       </p>
 
       <ul className="mt-16 divide-y divide-border border-t border-border">
@@ -41,20 +41,27 @@ export default function ProjectsPage() {
                 >
                   {project.name}
                 </h2>
-                <ul className="mt-4 space-y-2">
-                  <li>
-                    <ExternalLink href={project.liveUrl} className={linkClass}>
-                      View live site
-                    </ExternalLink>
-                  </li>
-                  {project.repoUrl && (
-                    <li>
-                      <ExternalLink href={project.repoUrl} className={linkClass}>
-                        Source on GitHub
-                      </ExternalLink>
-                    </li>
-                  )}
-                </ul>
+                {project.context && (
+                  <p className="mt-2 text-sm text-text-muted">{project.context}</p>
+                )}
+                {(project.liveUrl || project.repoUrl) && (
+                  <ul className="mt-4 space-y-2">
+                    {project.liveUrl && (
+                      <li>
+                        <ExternalLink href={project.liveUrl} className={linkClass}>
+                          View live site
+                        </ExternalLink>
+                      </li>
+                    )}
+                    {project.repoUrl && (
+                      <li>
+                        <ExternalLink href={project.repoUrl} className={linkClass}>
+                          Source on GitHub
+                        </ExternalLink>
+                      </li>
+                    )}
+                  </ul>
+                )}
               </div>
 
               <div className="max-w-[65ch]">

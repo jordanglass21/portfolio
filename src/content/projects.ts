@@ -4,7 +4,8 @@ export type Project = {
   summary: string; // one sentence, what it does
   details: string[]; // how it was built, key decisions
   stack: string[];
-  liveUrl: string;
+  context?: string; // e.g. "Team project", shown under the name
+  liveUrl?: string;
   repoUrl?: string;
   image?: { src: string; alt: string };
 };
@@ -65,5 +66,29 @@ export const projects: Project[] = [
       src: "/images/shopping-list.jpg",
       alt: "The Shopping List app: My List with 15 items left, an Add an item field, and produce items each tagged with the recipe it came from.",
     },
+  },
+  {
+    slug: "qa-platform",
+    name: "Q&A Platform",
+    context: "Team project with Matthew Hodges · CS 5500, Northeastern",
+    summary:
+      "A Stack Overflow–style site where people ask and answer questions, vote on answers, and moderate reported content.",
+    details: [
+      "We extended the course's starter app into five Express services (users, questions, answers, tags, and profiles), each running independently with its own MongoDB database behind a React client.",
+      "Every service validates requests and responses against its own OpenAPI spec and publishes interactive Swagger docs.",
+      "Jest unit and integration tests cover 100% of server statements, branches, and functions, and Cypress end-to-end tests cover the core flows: asking, answering, voting, moderation, and account management.",
+      "GitHub Actions runs both suites on every merge to main, and we scanned the codebase with CodeQL for security issues.",
+    ],
+    stack: [
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "OpenAPI",
+      "Jest",
+      "Cypress",
+      "GitHub Actions",
+    ],
   },
 ];
