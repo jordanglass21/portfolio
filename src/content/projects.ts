@@ -115,6 +115,10 @@ export const projects: Project[] = [
       "k6",
     ],
     repoUrl: "https://github.com/jordanglass21/NEUDFS",
+    image: {
+      src: "/images/neudfs.jpg",
+      alt: "A k6 load test report for NEUDFS navigation commands: 0 breached thresholds, 0 failed checks, and 300 of 300 passes for pwd, cd, ls, and reset to root.",
+    },
   },
   {
     slug: "assetsync",
@@ -122,14 +126,14 @@ export const projects: Project[] = [
     summary:
       "A reconciliation tool that compares a modern inventory database against a legacy system and flags records that have drifted apart.",
     details: [
-      "Three services talk over HTTP and JSON: a C# .NET 8 API with Entity Framework Core and SQLite, a Java Spring Boot service that simulates the legacy database, and a React dashboard.",
+      "Three services talk over HTTP and JSON: a C# .NET 10 API with Entity Framework Core and SQLite, a Java Spring Boot service that simulates the legacy database, and a React dashboard.",
       "The comparison engine indexes legacy records in a dictionary keyed by item, year, and month, so each of about 300,000 rows of real public sales data is matched in constant time.",
       "Sales figures are compared with a one-cent tolerance, so floating-point noise isn't reported as a discrepancy.",
       "The legacy service can corrupt rows on demand, and an end-to-end script injects drift, checks that the audit catches it, and resets.",
     ],
     stack: [
       "C#",
-      ".NET 8",
+      ".NET 10",
       "Entity Framework Core",
       "SQLite",
       "Java",
