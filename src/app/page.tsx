@@ -20,7 +20,7 @@ export default function Home() {
             </p>
             <h1
               id="hero-heading"
-              className="mt-4 text-5xl font-semibold leading-[1.1] tracking-[-0.02em] sm:text-6xl lg:text-7xl"
+              className="mt-4 text-4xl font-semibold leading-[1.1] tracking-[-0.02em] min-[400px]:text-5xl sm:text-6xl lg:text-7xl"
             >
               {profile.headline}
             </h1>
