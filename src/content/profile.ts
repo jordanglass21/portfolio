@@ -27,5 +27,5 @@ export const profile: Profile = {
   linkedinUrl: "https://www.linkedin.com/in/jordan-glass-one",
   // TODO(jordan): add public/images/headshot.jpg, then uncomment. Initials show until then.
   // headshot: { src: "/images/headshot.jpg", alt: "Jordan Glass" },
-  // TODO(jordan): add public/resume.pdf and set resumeUrl: "/resume.pdf"
+  resumeUrl: "/resume.pdf",
 };
