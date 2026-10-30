@@ -15,9 +15,7 @@ export default function Home() {
         <FieldLines />
         <div className="relative mx-auto w-full max-w-5xl px-6 py-24">
           <div data-field-dim className="max-w-4xl">
-            <p className="text-base text-text-muted sm:text-lg">
-              {profile.name}, {profile.role.toLowerCase()}
-            </p>
+            <p className="text-base text-text-muted sm:text-lg">{profile.name}</p>
             <h1
               id="hero-heading"
               className="mt-4 text-4xl font-semibold leading-[1.1] tracking-[-0.02em] min-[400px]:text-5xl sm:text-6xl lg:text-7xl"
