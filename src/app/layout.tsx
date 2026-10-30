@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { ContactLinks } from "@/components/ContactLinks";
+import { Copyright } from "@/components/Copyright";
 import { NavLinks } from "@/components/NavLinks";
 import { profile } from "@/content/profile";
 import { siteUrl } from "@/content/site";
@@ -49,7 +50,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </div>
         <footer className="border-t border-border">
           <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-8 text-sm text-text-muted sm:flex-row sm:items-center sm:justify-between">
-            <p>{profile.name}</p>
+            <Copyright />
             <ContactLinks />
           </div>
         </footer>
