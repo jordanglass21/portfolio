@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import Link from "next/link";
 import { ContactLinks } from "@/components/ContactLinks";
 import { NavLinks } from "@/components/NavLinks";
 import { profile } from "@/content/profile";
@@ -40,11 +39,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <header className="border-b border-border">
           <nav
             aria-label="Main"
-            className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6"
+            className="mx-auto flex h-16 max-w-5xl items-center px-6"
           >
-            <Link href="/" className="font-semibold tracking-[-0.01em]">
-              {profile.name}
-            </Link>
             <NavLinks />
           </nav>
         </header>

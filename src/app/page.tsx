@@ -15,13 +15,13 @@ export default function Home() {
         <FieldLines />
         <div className="relative mx-auto w-full max-w-5xl px-6 py-24">
           <div data-field-dim className="max-w-4xl">
-            <p className="text-base text-text-muted sm:text-lg">{profile.name}</p>
             <h1
               id="hero-heading"
-              className="mt-4 text-4xl font-semibold leading-[1.1] tracking-[-0.02em] min-[400px]:text-5xl sm:text-6xl lg:text-7xl"
+              className="text-5xl font-semibold leading-[1.05] tracking-[-0.03em] sm:text-7xl lg:text-8xl"
             >
-              {profile.headline}
+              {profile.name}
             </h1>
+            <p className="mt-6 max-w-2xl text-2xl leading-snug sm:text-3xl">{profile.headline}</p>
             <ContactLinks className="mt-10 text-lg" />
           </div>
         </div>
