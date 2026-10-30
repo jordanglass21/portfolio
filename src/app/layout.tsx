@@ -11,12 +11,24 @@ const geist = Geist({
   subsets: ["latin"],
 });
 
+// Vercel sets this to the production domain (the custom domain once one is added).
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: `${profile.name}, ${profile.role}`,
     template: `%s | ${profile.name}`,
   },
   description: profile.headline,
+  openGraph: {
+    type: "website",
+    siteName: profile.name,
+    title: `${profile.name}, ${profile.role}`,
+    description: profile.headline,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

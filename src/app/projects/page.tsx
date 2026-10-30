@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ExternalLink } from "@/components/ExternalLink";
+import { profile } from "@/content/profile";
 import { projects } from "@/content/projects";
 
 export const metadata: Metadata = {
   title: "Projects",
   description: "Software I've designed, built, and shipped.",
+  openGraph: {
+    type: "website",
+    siteName: profile.name,
+    title: `Projects | ${profile.name}`,
+    description: "Software I've designed, built, and shipped.",
+  },
 };
 
 const linkClass =
