@@ -18,7 +18,7 @@ export const profile: Profile = {
     "I build software and work directly with the people who use it.",
   // TODO(jordan): edit the bio
   bio: [
-    "I'm a software engineer finishing my MS in Computer Science at Northeastern. Most recently I built production REST APIs in TypeScript, NestJS, and PostgreSQL at Hydrow, shipping weekly through CI/CD.",
+    "I'm a software engineer with an MS in Computer Science from Northeastern. Most recently I built production REST APIs in TypeScript, NestJS, and PostgreSQL at Hydrow, shipping weekly through CI/CD.",
     "Before engineering, I spent four years running operations for an $8M/yr retail business, where I built an online sales channel and worked directly with customers and vendors every day.",
     "I'm looking for roles where I build software and work directly with the people who use it, whether that's on a product team or as a forward-deployed, solutions, or sales engineer.",
   ],
