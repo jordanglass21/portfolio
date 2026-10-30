@@ -142,5 +142,9 @@ export const projects: Project[] = [
       "TypeScript",
     ],
     repoUrl: "https://github.com/jordanglass21/AssetSync",
+    image: {
+      src: "/images/assetsync.jpg",
+      alt: "The AssetSync audit console after simulated drift: 10 discrepancies detected, with a report listing each item, period, metric, and the modern value, legacy value, and delta.",
+    },
   },
 ];
