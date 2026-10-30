@@ -70,18 +70,17 @@ export default function OpengraphImage() {
             width: 860,
           }}
         >
-          <div style={{ fontSize: 32, color: "#93A0C2" }}>
-            {`${profile.name}, ${profile.role.toLowerCase()}`}
-          </div>
           <div
             style={{
-              marginTop: 20,
-              fontSize: 64,
+              fontSize: 112,
               fontWeight: 600,
-              lineHeight: 1.1,
-              letterSpacing: "-0.02em",
+              lineHeight: 1,
+              letterSpacing: "-0.03em",
             }}
           >
+            {profile.name}
+          </div>
+          <div style={{ marginTop: 32, fontSize: 44, lineHeight: 1.25, color: "#C9D1E6" }}>
             {profile.headline}
           </div>
         </div>

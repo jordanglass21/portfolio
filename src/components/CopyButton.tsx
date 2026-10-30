@@ -30,7 +30,7 @@ export function CopyButton({ text, label }: Props) {
       type="button"
       onClick={copy}
       aria-label={label}
-      className="rounded border border-border px-2 py-0.5 text-[0.8em] text-text-muted transition-colors hover:text-text"
+      className="text-[0.85em] text-text-muted transition-colors hover:text-text"
     >
       <span aria-live="polite">{copied ? "Copied" : "Copy"}</span>
     </button>
