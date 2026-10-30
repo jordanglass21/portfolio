@@ -1,5 +1,43 @@
 @import "tailwindcss";
 
+/* Light is the counterpart; dark is the primary design. All text pairings meet WCAG AA. */
+:root {
+  color-scheme: light dark;
+  --bg: #f6f7fb;
+  --text: #121a2b;
+  --text-muted: #56617e;
+  --field: #3b55e6;
+  --border: #dce0ea;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121a2b;
+    --text: #e9edf7;
+    --text-muted: #93a0c2;
+    --field: #7c92ff;
+    --border: #26304a;
+  }
+}
+
 @theme inline {
   --font-sans: var(--font-geist-sans);
+  --color-bg: var(--bg);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-field: var(--field);
+  --color-border: var(--border);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 2px solid var(--field);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
