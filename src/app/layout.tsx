@@ -4,15 +4,13 @@ import Link from "next/link";
 import { ContactLinks } from "@/components/ContactLinks";
 import { NavLinks } from "@/components/NavLinks";
 import { profile } from "@/content/profile";
+import { siteUrl } from "@/content/site";
 import "./globals.css";
 
 const geist = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-
-// Canonical domain. Vercel's VERCEL_PROJECT_PRODUCTION_URL reports www, which only redirects here.
-const siteUrl = "https://jordanglass.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
