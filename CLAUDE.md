@@ -18,7 +18,7 @@ Do not add Supabase, a database, an API route, a CMS, or a UI component library 
 - `npm run dev` starts the local dev server
 - `npm run build` runs a production build (must pass before shipping)
 - `npm run lint` runs ESLint
-- `npm run typecheck` runs `tsc --noEmit`
+- `npm run typecheck` runs `next typegen && tsc --noEmit` (route types like `LayoutProps` are generated)
 
 ## Structure
 
