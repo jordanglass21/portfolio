@@ -43,7 +43,7 @@ export const projects: Project[] = [
     slug: "shopping-list",
     name: "Shopping List",
     summary:
-      "A grocery list app that turns recipes into shopping lists, sorts items by supermarket aisle, and syncs across devices.",
+      "A grocery list app that turns recipes into shopping lists and sorts items by supermarket aisle.",
     details: [
       "Per-user access is enforced in the database with PostgreSQL Row Level Security, so the client can safely talk to Supabase with a publishable key.",
       "Recipe import is rule-based parsing with a review step before anything is added, favoring accuracy over cleverness.",
