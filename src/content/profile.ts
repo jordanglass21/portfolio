@@ -25,7 +25,9 @@ export const profile: Profile = {
   email: "jordanglass421@gmail.com",
   githubUrl: "https://github.com/jordanglass21",
   linkedinUrl: "https://www.linkedin.com/in/jordan-glass-one",
-  // TODO(jordan): add public/images/headshot.jpg, then uncomment. Initials show until then.
-  // headshot: { src: "/images/headshot.jpg", alt: "Jordan Glass" },
+  headshot: {
+    src: "/images/headshot.jpg",
+    alt: "Jordan Glass, smiling, in a navy suit and red tie, with a city skyline across the water behind.",
+  },
   resumeUrl: "/resume.pdf",
 };
