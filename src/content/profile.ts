@@ -6,7 +6,7 @@ export type Profile = {
   email: string;
   githubUrl: string;
   linkedinUrl: string;
-  headshot: { src: string; alt: string };
+  headshot?: { src: string; alt: string };
   resumeUrl?: string;
 };
 
@@ -15,7 +15,7 @@ export const profile: Profile = {
   role: "Software engineer",
   // TODO(jordan): edit the hero headline
   headline:
-    "I build production software and work directly with the people who use it.",
+    "I build software and work directly with the people who use it.",
   // TODO(jordan): edit the bio
   bio: [
     "I'm a software engineer finishing my MS in Computer Science at Northeastern. Most recently I built production REST APIs in TypeScript, NestJS, and PostgreSQL at Hydrow, shipping weekly through CI/CD.",
@@ -25,7 +25,7 @@ export const profile: Profile = {
   email: "jordanglass421@gmail.com",
   githubUrl: "https://github.com/jordanglass21",
   linkedinUrl: "https://www.linkedin.com/in/jordan-glass-one",
-  // TODO(jordan): add public/images/headshot.jpg
-  headshot: { src: "/images/headshot.jpg", alt: "Jordan Glass" },
+  // TODO(jordan): add public/images/headshot.jpg, then uncomment. Initials show until then.
+  // headshot: { src: "/images/headshot.jpg", alt: "Jordan Glass" },
   // TODO(jordan): add public/resume.pdf and set resumeUrl: "/resume.pdf"
 };
