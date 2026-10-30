@@ -9,7 +9,7 @@ export type Project = {
   image?: { src: string; alt: string };
 };
 
-// To add a project, append an entry here. Screenshots go in public/images/.
+// To add a project, append an entry here. Screenshots go in public/images/ at a 16:10 ratio.
 export const projects: Project[] = [
   {
     slug: "asl-drill",
@@ -34,7 +34,10 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://asldrill.jordanglass.dev",
     repoUrl: "https://github.com/jordanglass21/asl-drill",
-    // TODO(jordan): add a screenshot, e.g. { src: "/images/asl-drill.png", alt: "..." }
+    image: {
+      src: "/images/asl-drill.jpg",
+      alt: "ASL Drill home page: the title on split-flap tiles, a Play button, and hand-drawn reference handshapes for the alphabet.",
+    },
   },
   {
     slug: "shopping-list",
@@ -58,6 +61,9 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://list.jordanglass.dev",
     repoUrl: "https://github.com/jordanglass21/shopping-list",
-    // TODO(jordan): add a screenshot, e.g. { src: "/images/shopping-list.png", alt: "..." }
+    image: {
+      src: "/images/shopping-list.jpg",
+      alt: "The Shopping List app: My List with 15 items left, an Add an item field, and produce items each tagged with the recipe it came from.",
+    },
   },
 ];
