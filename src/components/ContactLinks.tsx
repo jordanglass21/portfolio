@@ -1,4 +1,4 @@
-import { CopyButton } from "@/components/CopyButton";
+import { CopyEmail } from "@/components/CopyEmail";
 import { ExternalLink } from "@/components/ExternalLink";
 import { profile } from "@/content/profile";
 
@@ -27,12 +27,8 @@ export function ContactLinks({ className }: { className?: string }) {
           </li>
         )}
       </ul>
-      {/* Show the address: mailto does nothing without a configured mail app. */}
-      <p className="flex flex-wrap items-baseline gap-x-3">
-        <a href={`mailto:${profile.email}`} className={linkClass}>
-          {profile.email}
-        </a>
-        <CopyButton text={profile.email} label="Copy email address" />
+      <p>
+        <CopyEmail email={profile.email} className={linkClass} />
       </p>
     </div>
   );
