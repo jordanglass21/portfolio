@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ContactLinks } from "@/components/ContactLinks";
 import { FieldLines } from "@/components/FieldLines";
 import { profile } from "@/content/profile";
-import { projects } from "@/content/projects";
+import { featuredProjects } from "@/content/projects";
 
 export default function Home() {
   return (
@@ -69,7 +69,7 @@ export default function Home() {
             Selected work
           </h2>
           <ul className="mt-8 divide-y divide-border border-y border-border">
-            {projects.map((project) => (
+            {featuredProjects.map((project) => (
               <li key={project.slug}>
                 <Link
                   href={`/projects#${project.slug}`}
@@ -88,7 +88,7 @@ export default function Home() {
               href="/projects"
               className="underline decoration-border underline-offset-4 transition-colors hover:decoration-field"
             >
-              See how each project was built
+              See all projects and how they were built
             </Link>
           </p>
         </div>
