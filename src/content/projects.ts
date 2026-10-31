@@ -94,7 +94,7 @@ export const projects: Project[] = [
       "GitHub Actions",
     ],
     image: {
-      src: "/images/qa-platform.png",
+      src: "/images/qa-platform-light.png",
       alt: "Architecture diagram: a React client calls five Express services (users, questions, answers, tags, and profiles), each validated against its own OpenAPI spec and backed by its own MongoDB database.",
     },
   },
