@@ -21,7 +21,12 @@ export default function Home() {
             >
               {profile.name}
             </h1>
-            <p className="mt-6 max-w-2xl text-2xl leading-snug sm:text-3xl">{profile.headline}</p>
+            <p className="mt-5 flex flex-col gap-y-1 text-lg text-text-muted sm:flex-row sm:items-center sm:gap-x-3 sm:text-xl">
+              <span>{profile.role}</span>
+              <span aria-hidden="true" className="hidden size-1.5 rounded-full bg-field sm:block" />
+              <span>{profile.location}</span>
+            </p>
+            <p className="mt-8 max-w-2xl text-2xl leading-snug sm:text-3xl">{profile.headline}</p>
             <ContactLinks className="mt-10 text-lg" />
           </div>
         </div>
