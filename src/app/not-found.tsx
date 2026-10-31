@@ -10,8 +10,8 @@ const linkClass =
 
 export default function NotFound() {
   return (
-    <main className="mx-auto max-w-5xl px-6 py-32">
-      <h1 className="text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">Page not found</h1>
+    <main className="mx-auto max-w-6xl px-6 py-32">
+      <h1 className="text-4xl font-extrabold tracking-[-0.03em] sm:text-5xl">Page not found</h1>
       <p className="mt-4 text-lg text-text-muted">
         That page doesn&apos;t exist. Try the{" "}
         <Link href="/" className={linkClass}>

@@ -10,92 +10,85 @@ export default function Home() {
     <main>
       <section
         aria-labelledby="hero-heading"
-        className="relative flex min-h-[78svh] items-center overflow-hidden"
+        className="grid md:min-h-[min(80svh,46rem)] md:grid-cols-[38fr_62fr]"
       >
-        <FieldLines />
-        <div className="relative mx-auto w-full max-w-5xl px-6 py-24">
-          <div data-field-dim className="max-w-4xl">
-            <h1
-              id="hero-heading"
-              className="text-5xl font-semibold leading-[1.05] tracking-[-0.03em] sm:text-7xl lg:text-8xl"
-            >
-              {profile.name}
-            </h1>
-            <p className="mt-5 flex flex-col gap-y-1 text-lg text-text-muted sm:flex-row sm:items-center sm:gap-x-3 sm:text-xl">
-              <span>{profile.role}</span>
-              <span aria-hidden="true" className="hidden size-1.5 rounded-full bg-field sm:block" />
-              <span>{profile.location}</span>
-            </p>
-            <p className="mt-8 max-w-2xl text-2xl leading-snug sm:text-3xl">{profile.headline}</p>
-            <ContactLinks className="mt-10 text-lg" />
-          </div>
+        <div className="relative aspect-[4/3] bg-surface md:aspect-auto">
+          {profile.headshot && (
+            <Image
+              src={profile.headshot.src}
+              alt={profile.headshot.alt}
+              fill
+              priority
+              sizes="(min-width: 768px) 38vw, 100vw"
+              className="object-cover object-[50%_20%]"
+            />
+          )}
         </div>
-      </section>
 
-      <section aria-labelledby="about-heading" className="border-t border-border">
-        <div className="mx-auto grid max-w-5xl gap-10 px-6 py-20 md:grid-cols-[14rem_1fr] md:gap-16">
-          <div className="relative aspect-[4/5] w-40 overflow-hidden rounded-lg bg-border md:w-full">
-            {profile.headshot ? (
-              <Image
-                src={profile.headshot.src}
-                alt={profile.headshot.alt}
-                fill
-                sizes="(min-width: 768px) 14rem, 10rem"
-                className="object-cover"
-              />
-            ) : (
-              <span
-                aria-hidden="true"
-                className="absolute inset-0 flex items-center justify-center text-4xl font-semibold text-text-muted"
+        <div className="relative flex items-center overflow-hidden">
+          <FieldLines />
+          <div className="relative w-full px-6 py-14 sm:px-10 md:py-20 lg:px-16">
+            <div data-field-dim className="max-w-2xl">
+              <p className="text-lg font-semibold text-accent">Hi, I&apos;m</p>
+              <h1
+                id="hero-heading"
+                className="mt-2 text-5xl font-extrabold leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-7xl"
               >
-                {profile.name
-                  .split(" ")
-                  .map((part) => part[0])
-                  .join("")}
-              </span>
-            )}
-          </div>
-          <div className="max-w-[65ch]">
-            <h2 id="about-heading" className="text-2xl font-semibold tracking-[-0.02em]">
-              About
-            </h2>
-            <div className="mt-6 space-y-5 text-lg text-text-muted">
-              {profile.bio.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+                {profile.name}
+              </h1>
+              <p className="mt-6 max-w-xl text-xl leading-snug sm:text-2xl">{profile.headline}</p>
+              <p className="mt-4 text-text-muted">
+                {profile.role} · {profile.location}
+              </p>
+              <ContactLinks className="mt-8" />
             </div>
           </div>
         </div>
       </section>
 
+      <section aria-labelledby="about-heading" className="border-t border-border">
+        <div className="mx-auto grid max-w-6xl gap-6 px-6 py-20 md:grid-cols-[14rem_1fr] md:gap-16">
+          <h2 id="about-heading" className="text-2xl font-bold tracking-[-0.02em]">
+            About
+          </h2>
+          <div className="max-w-[65ch] space-y-5 text-lg text-text-muted">
+            {profile.bio.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section aria-labelledby="work-heading" className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-6 py-20">
-          <h2 id="work-heading" className="text-2xl font-semibold tracking-[-0.02em]">
+        <div className="mx-auto grid max-w-6xl gap-6 px-6 py-20 md:grid-cols-[14rem_1fr] md:gap-16">
+          <h2 id="work-heading" className="text-2xl font-bold tracking-[-0.02em]">
             Selected work
           </h2>
-          <ul className="mt-8 divide-y divide-border border-y border-border">
-            {featuredProjects.map((project) => (
-              <li key={project.slug}>
-                <Link
-                  href={`/projects#${project.slug}`}
-                  className="group grid gap-1 py-6 sm:grid-cols-[14rem_1fr] sm:gap-16"
-                >
-                  <span className="text-lg font-semibold group-hover:underline group-hover:decoration-field group-hover:underline-offset-4">
-                    {project.name}
-                  </span>
-                  <span className="text-text-muted">{project.summary}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-8">
-            <Link
-              href="/projects"
-              className="underline decoration-border underline-offset-4 transition-colors hover:decoration-field"
-            >
-              See all projects and how they were built
-            </Link>
-          </p>
+          <div>
+            <ul className="divide-y divide-border border-y border-border">
+              {featuredProjects.map((project) => (
+                <li key={project.slug}>
+                  <Link
+                    href={`/projects#${project.slug}`}
+                    className="group grid gap-1 py-5 sm:grid-cols-[11rem_1fr] sm:gap-8"
+                  >
+                    <span className="text-lg font-bold group-hover:text-accent">
+                      {project.name}
+                    </span>
+                    <span className="text-text-muted">{project.summary}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8">
+              <Link
+                href="/projects"
+                className="font-semibold text-accent underline decoration-transparent underline-offset-4 transition-colors hover:decoration-accent"
+              >
+                See all projects and how they were built
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
     </main>

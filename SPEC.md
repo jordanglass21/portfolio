@@ -85,28 +85,31 @@ A field of short line segments behind the hero text that turn to point toward th
 
 Build this component first, on a bare page, and get Jordan's sign-off on how it feels before building the pages around it.
 
-### Color tokens (starting point)
+### Color tokens
 
-Dark is the primary design. Follow the visitor's system setting, with the light scheme as a faithful counterpart.
+Light is the primary design (chosen from the design-direction mocks: "split portrait"). Follow the visitor's system setting, with a teal-tinted dark scheme as the counterpart.
 
-| Token | Dark | Light |
+| Token | Light | Dark |
 | --- | --- | --- |
-| `--bg` | `#121A2B` deep navy | `#F6F7FB` |
-| `--text` | `#E9EDF7` | `#121A2B` |
-| `--text-muted` | `#93A0C2` | `#56617E` |
-| `--field` (line color) | `#7C92FF` | `#3B55E6` |
-| `--border` | `#26304A` | `#DCE0EA` |
+| `--bg` | `#FFFFFF` | `#0B1315` |
+| `--surface` (photo backdrop) | `#EEF3F3` | `#121D20` |
+| `--text` | `#101820` | `#E6EEEE` |
+| `--text-muted` | `#56616C` | `#9DB0B2` |
+| `--accent` (links, primary button) | `#0F766E` teal | `#2CC4B0` |
+| `--accent-text` (text on accent) | `#FFFFFF` | `#04201D` |
+| `--field` (line color) | `#0F766E` | `#3FD0BD` |
+| `--border` | `#DFE6E8` | `#1F2C2F` |
 
-Verify every text and background pairing meets WCAG AA and adjust values if any fall short.
+Every text and background pairing meets WCAG AA.
 
 ### Typography
 
-Geist (variable) via `next/font`, one family throughout. Headlines at weight 600 with slightly tight tracking (about -0.02em); body at 400 with comfortable line height. Keep body line length under about 75 characters.
+Plus Jakarta Sans via `next/font`, one family throughout. The hero name is extra-bold (800) with tight tracking (about -0.035em); section headings bold (700); body at 400 with comfortable line height. Keep body line length under about 75 characters.
 
 ### Layout
 
-- **About:** the hero fills the first screen, with the field across its full width and the text left-aligned on top: name (small), a one-sentence headline, then links to GitHub, LinkedIn, and email. Below the hero, a calm section with the photo and the short bio.
-- **Projects:** same palette and type, no second ambient effect. Propose a layout during the design phase that gives each project's name, summary, stack, and links room to breathe.
+- **About:** a split hero. The headshot fills the left 38% (stacked on top on phones); the right side holds "Hi, I'm", the name, the headline, role and location, and pill buttons (Résumé filled in the accent; GitHub, LinkedIn, and the click-to-copy email outlined). The field lines run behind the text side only. Below: the bio, then Selected work (featured projects only).
+- **Projects:** same palette and type, no second ambient effect. Each project is a row with its name and links on the left and its summary, screenshot, details, and stack on the right.
 
 ### Avoid
 
@@ -122,7 +125,7 @@ Each phase is its own branch and PR, shipped with the ship skill.
 
 1. **Scaffold**: `create-next-app` with TypeScript, Tailwind, ESLint, App Router, `src/` dir. Add a `typecheck` script. Clean out boilerplate. Commit `CLAUDE.md` and this spec.
 2. **Content layer**: `src/content/profile.ts` and `src/content/projects.ts` with types and placeholder data.
-3. **Tokens and field lines**: set up the color tokens and Geist, then build `FieldLines` on a bare page. Wait for Jordan's sign-off on the feel.
+3. **Tokens and field lines**: set up the color tokens and font, then build `FieldLines` on a bare page. Wait for Jordan's sign-off on the feel.
 4. **Layout and About page**: root layout, nav, footer, and the About page with the field-lines hero.
 5. **Projects page**: propose the layout, then render it from `projects.ts`.
 6. **Polish**: metadata and Open Graph image, favicon, `not-found` page, accessibility pass, Lighthouse check.
