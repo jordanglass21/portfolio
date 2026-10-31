@@ -1,6 +1,7 @@
 export type Profile = {
   name: string;
   role: string;
+  location: string;
   headline: string;
   bio: string[];
   email: string;
@@ -13,6 +14,7 @@ export type Profile = {
 export const profile: Profile = {
   name: "Jordan Glass",
   role: "Software engineer",
+  location: "New York City area",
   // TODO(jordan): edit the hero headline
   headline:
     "I build software and work directly with the people who use it.",
