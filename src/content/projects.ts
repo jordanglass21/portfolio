@@ -5,6 +5,7 @@ export type Project = {
   details: string[]; // how it was built, key decisions
   stack: string[];
   context?: string; // e.g. "Team project", shown under the name
+  featured?: boolean; // listed under Selected work on the About page
   liveUrl?: string;
   repoUrl?: string;
   image?: { src: string; alt: string };
@@ -14,6 +15,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "asl-drill",
+    featured: true,
     name: "ASL Drill",
     summary:
       "A fingerspelling trainer: it shows a word, you spell it to your webcam, and it grades each letter in real time.",
@@ -42,6 +44,7 @@ export const projects: Project[] = [
   },
   {
     slug: "shopping-list",
+    featured: true,
     name: "Shopping List",
     summary:
       "A grocery list app that turns recipes into shopping lists and sorts items by supermarket aisle.",
@@ -93,6 +96,7 @@ export const projects: Project[] = [
   },
   {
     slug: "neudfs",
+    featured: true,
     name: "NEUDFS",
     context: "Four-person team project · CS 6650, Northeastern",
     summary:
@@ -148,3 +152,5 @@ export const projects: Project[] = [
     },
   },
 ];
+
+export const featuredProjects = projects.filter((project) => project.featured);
