@@ -93,6 +93,10 @@ export const projects: Project[] = [
       "Cypress",
       "GitHub Actions",
     ],
+    image: {
+      src: "/images/qa-platform.png",
+      alt: "Architecture diagram: a React client calls five Express services (users, questions, answers, tags, and profiles), each validated against its own OpenAPI spec and backed by its own MongoDB database.",
+    },
   },
   {
     slug: "neudfs",

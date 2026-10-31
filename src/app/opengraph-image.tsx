@@ -34,14 +34,29 @@ function fieldSegments() {
   return segments;
 }
 
+// ImageResponse needs ttf, otf, or woff (not the site's woff2), so the weights it uses are bundled here.
+function loadFont(weight: 400 | 600 | 800) {
+  return readFile(join(process.cwd(), `assets/fonts/PlusJakartaSans-${weight}.woff`));
+}
+
 export default async function OpengraphImage() {
+  const [regular, semibold, extrabold] = await Promise.all([loadFont(400), loadFont(600), loadFont(800)]);
   const photo = profile.headshot
     ? `data:image/jpeg;base64,${(await readFile(join(process.cwd(), "public", profile.headshot.src))).toString("base64")}`
     : null;
 
   return new ImageResponse(
     (
-      <div style={{ width: "100%", height: "100%", display: "flex", background: "#FFFFFF", color: "#101820" }}>
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          background: "#FFFFFF",
+          color: "#101820",
+          fontFamily: "Plus Jakarta Sans",
+        }}
+      >
         <div style={{ display: "flex", width: photoWidth, height: "100%", background: "#EEF3F3" }}>
           {photo && (
             <img
@@ -83,7 +98,7 @@ export default async function OpengraphImage() {
             }}
           >
             <div style={{ fontSize: 30, fontWeight: 600, color: "#0F766E" }}>Hi, I&apos;m</div>
-            <div style={{ marginTop: 8, fontSize: 88, fontWeight: 700, lineHeight: 1, letterSpacing: "-0.035em" }}>
+            <div style={{ marginTop: 8, fontSize: 88, fontWeight: 800, lineHeight: 1, letterSpacing: "-0.035em" }}>
               {profile.name}
             </div>
             <div style={{ marginTop: 28, fontSize: 36, lineHeight: 1.3, color: "#2C3640" }}>
@@ -93,6 +108,13 @@ export default async function OpengraphImage() {
         </div>
       </div>
     ),
-    size,
+    {
+      ...size,
+      fonts: [
+        { name: "Plus Jakarta Sans", data: regular, weight: 400, style: "normal" },
+        { name: "Plus Jakarta Sans", data: semibold, weight: 600, style: "normal" },
+        { name: "Plus Jakarta Sans", data: extrabold, weight: 800, style: "normal" },
+      ],
+    },
   );
 }
