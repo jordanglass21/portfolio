@@ -46,7 +46,7 @@ Content is data, components are layout. To change copy or add a project, edit `s
 - Every external link opens in a new tab with `rel="noopener noreferrer"` and has an accessible label.
 - Every image has meaningful `alt` text. Decorative images use `alt=""`.
 - Meet WCAG 2.1 AA (Section 508 aligned): color contrast, semantic HTML, landmarks, heading order.
-- Responsive from 360px wide upward. Visible keyboard focus. Respect `prefers-reduced-motion`. Support light and dark color schemes.
+- Responsive from 360px wide upward. Visible keyboard focus. Respect `prefers-reduced-motion`. The site is deliberately dark-only (one navy palette for every visitor, Jordan's choice); don't add a light scheme unless Jordan asks.
 - Set page `metadata` (title, description, Open Graph) on both pages.
 - Keep dependencies minimal. Ask before adding any package.
 

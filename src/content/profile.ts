@@ -28,8 +28,8 @@ export const profile: Profile = {
   githubUrl: "https://github.com/jordanglass21",
   linkedinUrl: "https://www.linkedin.com/in/jordan-glass-one",
   headshot: {
-    src: "/images/headshot.jpg",
-    alt: "Jordan Glass, smiling, in a navy suit and red tie, with a city skyline across the water behind.",
+    src: "/images/headshot-studio.jpg",
+    alt: "Jordan Glass, smiling, in a navy suit and red tie against a plain grey background.",
   },
   resumeUrl: "/resume.pdf",
 };

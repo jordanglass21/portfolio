@@ -52,12 +52,12 @@ export default async function OpengraphImage() {
           width: "100%",
           height: "100%",
           display: "flex",
-          background: "#FFFFFF",
-          color: "#101820",
+          background: "#121A2B",
+          color: "#E9EDF7",
           fontFamily: "Plus Jakarta Sans",
         }}
       >
-        <div style={{ display: "flex", width: photoWidth, height: "100%", background: "#EEF3F3" }}>
+        <div style={{ display: "flex", width: photoWidth, height: "100%", background: "#1A2338" }}>
           {photo && (
             <img
               src={photo}
@@ -81,7 +81,7 @@ export default async function OpengraphImage() {
                 y1={s.y1}
                 x2={s.x2}
                 y2={s.y2}
-                stroke="#0F766E"
+                stroke="#7C92FF"
                 strokeWidth={2 + s.t}
                 strokeLinecap="round"
                 opacity={0.1 + 0.55 * s.t}
@@ -97,11 +97,11 @@ export default async function OpengraphImage() {
               width: "100%",
             }}
           >
-            <div style={{ fontSize: 30, fontWeight: 600, color: "#0F766E" }}>Hi, I&apos;m</div>
+            <div style={{ fontSize: 30, fontWeight: 600, color: "#7C92FF" }}>Hi, I&apos;m</div>
             <div style={{ marginTop: 8, fontSize: 88, fontWeight: 800, lineHeight: 1, letterSpacing: "-0.035em" }}>
               {profile.name}
             </div>
-            <div style={{ marginTop: 28, fontSize: 36, lineHeight: 1.3, color: "#2C3640" }}>
+            <div style={{ marginTop: 28, fontSize: 36, lineHeight: 1.3, color: "#C9D1E6" }}>
               {profile.headline}
             </div>
           </div>

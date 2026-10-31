@@ -1,29 +1,16 @@
 @import "tailwindcss";
 
-/* Light is the primary design; dark is a teal-tinted counterpart. All text pairings meet WCAG AA. */
+/* One deliberate dark navy palette for every visitor (no light scheme). All text pairings meet WCAG AA. */
 :root {
-  color-scheme: light dark;
-  --bg: #ffffff;
-  --surface: #eef3f3;
-  --text: #101820;
-  --text-muted: #56616c;
-  --accent: #0f766e;
-  --accent-text: #ffffff;
-  --field: #0f766e;
-  --border: #dfe6e8;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b1315;
-    --surface: #121d20;
-    --text: #e6eeee;
-    --text-muted: #9db0b2;
-    --accent: #2cc4b0;
-    --accent-text: #04201d;
-    --field: #3fd0bd;
-    --border: #1f2c2f;
-  }
+  color-scheme: dark;
+  --bg: #121a2b;
+  --surface: #1a2338;
+  --text: #e9edf7;
+  --text-muted: #93a0c2;
+  --accent: #7c92ff;
+  --accent-text: #0b1226;
+  --field: #7c92ff;
+  --border: #26304a;
 }
 
 @theme inline {
