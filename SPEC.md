@@ -81,24 +81,24 @@ A field of short line segments behind the hero text that turn to point toward th
 - Use pointer events so touch works too.
 - With `prefers-reduced-motion: reduce`, skip the easing: the field updates directly to the pointer position with no animated movement.
 - Handle `devicePixelRatio` for sharp lines, redraw on resize (`ResizeObserver`), and skip work while the hero is off-screen (`IntersectionObserver`).
-- Read the line color from a CSS variable so it works in both color schemes.
+- Read the line color from a CSS variable (`--field`) rather than hardcoding it.
 
 Build this component first, on a bare page, and get Jordan's sign-off on how it feels before building the pages around it.
 
 ### Color tokens
 
-Light is the primary design (chosen from the design-direction mocks: "split portrait"). Follow the visitor's system setting, with a teal-tinted dark scheme as the counterpart.
+Dark-only by design: every visitor sees the same navy palette, whatever their system setting (Jordan chose "original blue, dark" from the palette comparison). Layout and type come from the "split portrait" mock.
 
-| Token | Light | Dark |
-| --- | --- | --- |
-| `--bg` | `#FFFFFF` | `#0B1315` |
-| `--surface` (photo backdrop) | `#EEF3F3` | `#121D20` |
-| `--text` | `#101820` | `#E6EEEE` |
-| `--text-muted` | `#56616C` | `#9DB0B2` |
-| `--accent` (links, primary button) | `#0F766E` teal | `#2CC4B0` |
-| `--accent-text` (text on accent) | `#FFFFFF` | `#04201D` |
-| `--field` (line color) | `#0F766E` | `#3FD0BD` |
-| `--border` | `#DFE6E8` | `#1F2C2F` |
+| Token | Value |
+| --- | --- |
+| `--bg` | `#121A2B` deep navy |
+| `--surface` (photo backdrop) | `#1A2338` |
+| `--text` | `#E9EDF7` |
+| `--text-muted` | `#93A0C2` |
+| `--accent` (links, primary button) | `#7C92FF` periwinkle |
+| `--accent-text` (text on accent) | `#0B1226` |
+| `--field` (line color) | `#7C92FF` |
+| `--border` | `#26304A` |
 
 Every text and background pairing meets WCAG AA.
 
@@ -134,7 +134,7 @@ Each phase is its own branch and PR, shipped with the ship skill.
 ## Acceptance criteria
 
 - `npm run lint`, `npm run typecheck`, and `npm run build` pass with no warnings.
-- Both pages work and look right from 360px to wide desktop, in light and dark mode.
+- Both pages work and look right from 360px to wide desktop.
 - All links work; external links open in a new tab.
 - Lighthouse scores of 95+ for Performance, Accessibility, Best Practices, and SEO on both pages.
 - Adding a third project requires editing only `src/content/projects.ts` (and adding an image, if any).
