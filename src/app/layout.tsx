@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { ContactLinks } from "@/components/ContactLinks";
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <ContactLinks />
           </div>
         </footer>
+        <Analytics />
       </body>
     </html>
   );

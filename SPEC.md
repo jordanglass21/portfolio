@@ -139,4 +139,4 @@ Each phase is its own branch and PR, shipped with the ship skill.
 
 ## Out of scope for now
 
-Blog, contact form, CMS, analytics, and any motion or interactive effects beyond the field lines. If Jordan later wants a contact form, prefer a simple form service or a single Vercel function over adding a database.
+Blog, contact form, CMS, and any motion or interactive effects beyond the field lines. (Vercel Web Analytics was added later at Jordan's request.) If Jordan later wants a contact form, prefer a simple form service or a single Vercel function over adding a database.
