@@ -1,6 +1,6 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { ContactLinks } from "@/components/ContactLinks";
 import { Copyright } from "@/components/Copyright";
 import { NavLinks } from "@/components/NavLinks";
@@ -8,8 +8,8 @@ import { profile } from "@/content/profile";
 import { siteUrl } from "@/content/site";
 import "./globals.css";
 
-const geist = Geist({
-  variable: "--font-geist-sans",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
 });
 
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geist.variable} antialiased`}>
+    <html lang="en" className={`${jakarta.variable} antialiased`}>
       <body className="flex min-h-svh flex-col">
         <a
           href="#main"
@@ -41,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <header className="border-b border-border">
           <nav
             aria-label="Main"
-            className="mx-auto flex h-16 max-w-5xl items-center px-6"
+            className="mx-auto flex h-16 max-w-6xl items-center justify-end px-6"
           >
             <NavLinks />
           </nav>
@@ -50,9 +50,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </div>
         <footer className="border-t border-border">
-          <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-8 text-sm text-text-muted sm:flex-row sm:items-center sm:justify-between">
+          <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-sm text-text-muted sm:flex-row sm:items-center sm:justify-between">
             <Copyright />
-            <ContactLinks />
+            <ContactLinks variant="plain" />
           </div>
         </footer>
         <Analytics />

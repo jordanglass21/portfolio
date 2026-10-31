@@ -20,8 +20,8 @@ const linkClass =
 
 export default function ProjectsPage() {
   return (
-    <main className="mx-auto max-w-5xl px-6 py-20">
-      <h1 className="text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">Projects</h1>
+    <main className="mx-auto max-w-6xl px-6 py-20">
+      <h1 className="text-4xl font-extrabold tracking-[-0.03em] sm:text-5xl">Projects</h1>
       <p className="mt-4 max-w-[65ch] text-lg text-text-muted">
         Things I&apos;ve designed, built, and shipped, and the engineering decisions behind them.
       </p>
@@ -37,7 +37,7 @@ export default function ProjectsPage() {
               <div>
                 <h2
                   id={`${project.slug}-heading`}
-                  className="text-2xl font-semibold tracking-[-0.02em]"
+                  className="text-2xl font-bold tracking-[-0.02em]"
                 >
                   {project.name}
                 </h2>

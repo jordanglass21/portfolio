@@ -22,7 +22,7 @@ export function NavLinks() {
               aria-current={current ? "page" : undefined}
               className={
                 current
-                  ? "text-text"
+                  ? "font-semibold text-accent"
                   : "text-text-muted transition-colors hover:text-text"
               }
             >
