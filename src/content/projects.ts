@@ -14,6 +14,36 @@ export type Project = {
 // To add a project, append an entry here. Screenshots go in public/images/ at a 16:10 ratio.
 export const projects: Project[] = [
   {
+    slug: "neudfs",
+    featured: true,
+    name: "NEUDFS",
+    context: "Four-person team project · CS 6650, Northeastern",
+    summary:
+      "A distributed file system for university courses, where professors and students share class folders with role-based permissions, deployed on AWS.",
+    details: [
+      "A Go server exposes every file operation over gRPC behind an AWS Network Load Balancer, so it scales by adding servers. File data lives in S3, and metadata and permissions live in DynamoDB, all provisioned with Terraform.",
+      "Role-based access keeps student work private while professors manage shared class folders. Load tests that tried six kinds of unauthorized access never got through.",
+      "My share: the S3 infrastructure in Terraform, renaming files and folders, delete (including fixing a race condition), and the permission checks for creating folders.",
+      "We load-tested it with 19 k6 scenarios, including concurrent renames, upload races, streaming files up to 50 MB, and a 10-minute soak test.",
+    ],
+    stack: [
+      "Go",
+      "gRPC",
+      "Protocol Buffers",
+      "AWS",
+      "S3",
+      "DynamoDB",
+      "Terraform",
+      "Docker",
+      "k6",
+    ],
+    repoUrl: "https://github.com/jordanglass21/NEUDFS",
+    image: {
+      src: "/images/neudfs.jpg",
+      alt: "A k6 load test report for NEUDFS navigation commands: 0 breached thresholds, 0 failed checks, and 300 of 300 passes for pwd, cd, ls, and reset to root.",
+    },
+  },
+  {
     slug: "asl-drill",
     featured: true,
     name: "ASL Drill",
@@ -40,6 +70,33 @@ export const projects: Project[] = [
     image: {
       src: "/images/asl-drill.jpg",
       alt: "ASL Drill home page: the title on split-flap tiles, a Play button, and hand-drawn reference handshapes for the alphabet.",
+    },
+  },
+  {
+    slug: "assetsync",
+    name: "AssetSync",
+    summary:
+      "A reconciliation tool that compares a modern inventory database against a legacy system and flags records that have drifted apart.",
+    details: [
+      "Three services talk over HTTP and JSON: a C# .NET 10 API with Entity Framework Core and SQLite, a Java Spring Boot service that simulates the legacy database, and a React dashboard.",
+      "The comparison engine indexes legacy records in a dictionary keyed by item, year, and month, so each of about 300,000 rows of real public sales data is matched in constant time.",
+      "Sales figures are compared with a one-cent tolerance, so floating-point noise isn't reported as a discrepancy.",
+      "The legacy service can corrupt rows on demand, and an end-to-end script injects drift, checks that the audit catches it, and resets.",
+    ],
+    stack: [
+      "C#",
+      ".NET 10",
+      "Entity Framework Core",
+      "SQLite",
+      "Java",
+      "Spring Boot",
+      "React",
+      "TypeScript",
+    ],
+    repoUrl: "https://github.com/jordanglass21/AssetSync",
+    image: {
+      src: "/images/assetsync.jpg",
+      alt: "The AssetSync audit console after simulated drift: 10 discrepancies detected, with a report listing each item, period, metric, and the modern value, legacy value, and delta.",
     },
   },
   {
@@ -96,63 +153,6 @@ export const projects: Project[] = [
     image: {
       src: "/images/qa-platform-light.png",
       alt: "Architecture diagram: a React client calls five Express services (users, questions, answers, tags, and profiles), each validated against its own OpenAPI spec and backed by its own MongoDB database.",
-    },
-  },
-  {
-    slug: "neudfs",
-    featured: true,
-    name: "NEUDFS",
-    context: "Four-person team project · CS 6650, Northeastern",
-    summary:
-      "A distributed file system for university courses, where professors and students share class folders with role-based permissions, deployed on AWS.",
-    details: [
-      "A Go server exposes every file operation over gRPC behind an AWS Network Load Balancer, so it scales by adding servers. File data lives in S3, and metadata and permissions live in DynamoDB, all provisioned with Terraform.",
-      "Role-based access keeps student work private while professors manage shared class folders. Load tests that tried six kinds of unauthorized access never got through.",
-      "My share: the S3 infrastructure in Terraform, renaming files and folders, delete (including fixing a race condition), and the permission checks for creating folders.",
-      "We load-tested it with 19 k6 scenarios, including concurrent renames, upload races, streaming files up to 50 MB, and a 10-minute soak test.",
-    ],
-    stack: [
-      "Go",
-      "gRPC",
-      "Protocol Buffers",
-      "AWS",
-      "S3",
-      "DynamoDB",
-      "Terraform",
-      "Docker",
-      "k6",
-    ],
-    repoUrl: "https://github.com/jordanglass21/NEUDFS",
-    image: {
-      src: "/images/neudfs.jpg",
-      alt: "A k6 load test report for NEUDFS navigation commands: 0 breached thresholds, 0 failed checks, and 300 of 300 passes for pwd, cd, ls, and reset to root.",
-    },
-  },
-  {
-    slug: "assetsync",
-    name: "AssetSync",
-    summary:
-      "A reconciliation tool that compares a modern inventory database against a legacy system and flags records that have drifted apart.",
-    details: [
-      "Three services talk over HTTP and JSON: a C# .NET 10 API with Entity Framework Core and SQLite, a Java Spring Boot service that simulates the legacy database, and a React dashboard.",
-      "The comparison engine indexes legacy records in a dictionary keyed by item, year, and month, so each of about 300,000 rows of real public sales data is matched in constant time.",
-      "Sales figures are compared with a one-cent tolerance, so floating-point noise isn't reported as a discrepancy.",
-      "The legacy service can corrupt rows on demand, and an end-to-end script injects drift, checks that the audit catches it, and resets.",
-    ],
-    stack: [
-      "C#",
-      ".NET 10",
-      "Entity Framework Core",
-      "SQLite",
-      "Java",
-      "Spring Boot",
-      "React",
-      "TypeScript",
-    ],
-    repoUrl: "https://github.com/jordanglass21/AssetSync",
-    image: {
-      src: "/images/assetsync.jpg",
-      alt: "The AssetSync audit console after simulated drift: 10 discrepancies detected, with a report listing each item, period, metric, and the modern value, legacy value, and delta.",
     },
   },
 ];
